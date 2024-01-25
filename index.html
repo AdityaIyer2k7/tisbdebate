@@ -18,6 +18,7 @@
             font-family: 'Times New Roman', Times, serif;
             overflow-x: hidden;
             color: white;
+            user-select: none;
         }
         html { height:100%; }
         body { height: 100%; background-color: var(--tisb-bg-col1); }
@@ -27,7 +28,7 @@
             padding: 0% 20vw 0% 5vw;
             grid-template-columns: auto;
             background-color: var(--tisb-panels-col);
-        overflow: hidden;
+            overflow: hidden;
         }
         #top-nav>* {
             justify-self: center;
@@ -48,18 +49,25 @@
             justify-self: center;
             align-self: end;
         }
-        #front-page-heading {
+        .heading {
             font-size: 300%;
             align-self: flex-start;
-            grid-row: 2;
             justify-self: center;
+            text-align: center;
             color: white;
         }
-        #front-page-subheading {
+        .subheading {
             font-size: 200%;
             align-self: flex-start;
-            grid-row: 3;
             justify-self: center;
+            text-align: center;
+            color: white;
+        }
+        .subsubheading {
+            font-size: 150%;
+            align-self: flex-start;
+            justify-self: center;
+            text-align: center;
             color: white;
         }
         #front-page-regbtn {
@@ -67,8 +75,17 @@
             grid-row: 4;
             height: fit-content;
         }
-        /* TODO: Add button:hover to the element defined below */
-        #front-page-regbtn>button {
+        @keyframes button-hover-anim {
+            from {
+                background-color: var(--tisb-panels-col);
+                color: black;
+            }
+            to {
+                background-color: rgba(0,0,0,0);
+                color: white;
+            }
+        }
+        #front-page-regbtn-innerdiv {
             align-self: flex-start;
             justify-self: center;
             font-size: 175%;
@@ -77,6 +94,12 @@
             padding: 1vh 5vw 1vh 5vw;
             color: black;
             background-color: var(--tisb-panels-col);
+        }
+        #front-page-regbtn-innerdiv:hover {
+            animation-name: button-hover-anim;
+            animation-duration: 250ms;
+            background-color: rgba(0,0,0,0);
+            color: white;
         }
         #about-page {
             display: grid;
@@ -89,17 +112,14 @@
             justify-self: center;
             margin-bottom: 10vh;
             padding: 2%;
-            width: 40%;
+            width: 60%;
         }
         #about-page>div>h1 {
             grid-row: 1;
             grid-column: span 1 / 2;
-            justify-self: center;
-            text-align: center;
             width: 100%;
         }
         #letters-page {
-            background-color: var(--tisb-bg-col1);
             display: grid;
             width: 100vw;
             padding-top: 10vh;
@@ -119,53 +139,86 @@
             text-align: center;
             width: 100%;
         }
+        .multifile-box {
+            display: grid;
+            padding: 10vh 20vw;
+        }
+        .multifile-box>h1 {
+            grid-column: span 1/3;
+
+        }
+        .file-placeholder {
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            width: 10vw;
+            aspect-ratio: 1/1.414;
+            background-color: grey;
+        }
+        .file-placeholder>p {
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            width: 100%;
+            font-size: larger;
+            font-family: 'Courier New', Courier, monospace;
+            text-wrap: wrap;
+        }
     </style>
 </head>
 <body>
+    <script>
+        function tohref(href) { location.href = href; }
+        tohref_reg = () => { tohref("https://events.tisb.org/tdrf/"); };
+        tohref_codeofconduct = () => { tohref("https://nafltrust-my.sharepoint.com/:b:/r/personal/kpavan_tisb_ac_in/Documents/Documents/Share/Other/Event%20Registration%20Links/TISB%20DEBATE%20Code%20of%20Conduct.pdf?csf=1&web=1&e=4gdaC3"); };
+    </script>
     <div id="top-nav">
-        <div style="grid-column: 1;">
-            <img id="top-nav-logo" src="assets/logo-removebg.png" alt="TISB Debate Logo" height="120vh">
+        <div style="grid-column: 1; height: 17vh; overflow: hidden;">
+            <img id="top-nav-logo" src="assets/logo-removebg.png" alt="TISB Debate Logo" height="100%">
         </div>
         <div style="grid-column: 2;"><a href="#top-nav" style="color:black;">Home</a></div>
         <div style="grid-column: 3;"><a href="#about-page" style="color:black;">About</a></div>
         <div style="grid-column: 4;"><a href="#letters-page" style="color:black;">Letters</a></div>
         <div style="grid-column: 5;"><a href="#motions-page" style="color:black;">Motions</a></div>
-        <div style="grid-column: 6;"><a href="." style="color:black;">Files</a></div>
-        <div style="grid-column: 7;"><a href="." style="color:black;">Register</a></div>
+        <div style="grid-column: 6;"><a href="#files-page" style="color:black;">Files</a></div>
+        <div style="grid-column: 7;"><a href="https://events.tisb.org/tdrf/" style="color:black;">Register</a></div>
     </div>
     <div id="front-page">
         <img id="front-page-logo" src="assets/logo-removebg.png" alt="TISB Debate Logo">
-        <h1 id="front-page-heading">TISB Debate 2024</h1>
-        <h1 id="front-page-subheading">17-18 February, 2024</h1>
-        <div id="front-page-regbtn"><button>Register</button></div>
+        <h1 class="heading">TISB Debate 2024</h1>
+        <h1 class="subheading">17-18 February, 2024</h1>
+        <div id="front-page-regbtn"><div id="front-page-regbtn-innerdiv" onclick="tohref_reg()">Register</div></div>
     </div>
     <hr>
     <div id="about-page">
-        <div id="about-tisb" style="grid-row: 1; width: calc(40% + 20vw);">
-            <h1 id="about-tisb-heading">About TISB</h1>
-            <div id="about-tisb-content" style="grid-row: 2; display: grid;">
+        <div class="article" style="grid-row: 1;">
+            <h1 class="subsubheading">About TISB</h1>
+            <div style="grid-row: 2; display: grid;">
                 <p style="grid-column: 1;">
-                    The International School Bangalore (TISB) was one of the initial international schools in the country, quickly
-                    climbing the ranks and establishing itself as one of the top international schools in the world (The Good
-                    Schools Guide, UK). As an international school, TISB stimulates intercultural relations, providing students
-                    with a platform for becoming global citizens. TISB is home to some of the best faculty, whose guidance has been
-                    critical for the culmination of academically excellent and well-rounded students. In short, a holistic approach
-                    to not only education, but life is what TISB stands for. TISB's ample facilities and teachers' persistent
-                    encouragement provide endless opportunities for students to pursue all kinds of interests.
+                The International School Bangalore (TISB) was one of the initial international schools in the country, quickly
+                climbing the ranks and establishing itself as one of the top international schools in the world (The Good
+                Schools Guide, UK). As an international school, TISB stimulates intercultural relations, providing students
+                with a platform for becoming global citizens. TISB is home to some of the best faculty, whose guidance has been
+                critical for the culmination of academically excellent and well-rounded students. In short, a holistic approach
+                to not only education, but life is what TISB stands for. TISB's ample facilities and teachers' persistent
+                encouragement provide endless opportunities for students to pursue all kinds of interests.
                 </p>
-                <img id="about-tisb-image" src="assets/tisb-campus.webp" alt="TISB Campus Photo" style="grid-column: 2; width: 20vw;">
+                <img src="assets/tisb-campus.webp" alt="TISB Campus Photo" style="grid-column: 2; width: 20vw;">
             </div>
         </div>
-        <div id="about-tisb-debate" style="grid-row: 2; transform: translate(10vw);">
-            <h1 id="about-tisb-debate-heading">About TISB Debate 2024</h1>
-            <p id="about-tisb-debate-content">
-            The first edition of the TISB Debate is finally here, from 17th to 18th February online, taking the school by
-            storm. The TISB DEBATE Organising Committee is ecstatic to announce the first iteration of presumably many, TISB
-            debates.<br><br>An event established to challenge young minds in the field of debate, TISB Debate is a much-awaited
-            and grand conference that can be your stepping stone into the world of debate! This online conference welcomes
-            teams of grades 6-12 and aims to include and imbibe everybody into the world of debate, either help spark an
-            interest or hone previously built skills in students.
-            </p>
+        <div class="article" style="grid-row: 2;">
+            <h1 class="subsubheading">About TISB Debate 2024</h1>
+            <div style="grid-row: 2; display: grid;">
+                <img src="assets/logo-removebg.png" alt="TISB Debate Logo" style="grid-column: 1; width: 20vw;">
+                <p style="grid-column: 2;">
+                The first edition of the TISB Debate is finally here, from 17th to 18th February online, taking the school by
+                storm. The TISB DEBATE Organising Committee is ecstatic to announce the first iteration of presumably many, TISB
+                debates.<br><br>An event established to challenge young minds in the field of debate, TISB Debate is a much-awaited
+                and grand conference that can be your stepping stone into the world of debate! This online conference welcomes
+                teams of grades 6-12 and aims to include and imbibe everybody into the world of debate, either help spark an
+                interest or hone previously built skills in students.
+                </p>
+            </div>
         </div>
     </div>
     <!--
@@ -186,47 +239,47 @@ for i, para in enumerate(words):
     print("\n" + indent*" " + "<br><br>\n" + indent*" ", end="")
     -->
     <div id="letters-page">
-        <div id="chief-org-letter" style="grid-row: 1;">
-            <h1 id="chief-org-letter-heading">Letter from the Chief Organizer</h1>
-            <div id="chief-org-letter-content" style="grid-row: 2; display: grid;">
-                <p id="chief-org-letter-content" style="grid-column: 1; padding-right: 1vw;">
-                    Dear debaters,
-                    <br><br>
-                    It is my absolute honor to bring to you the first edition of TISB DEBATE. TISB's previous debating endeavours have been incredible 
-                    and filled with national debaters (and a WSDC Best Speaker). Having continuously contributed to the Indian debating circuit, we 
-                    now look to contribute in another way. As one of India's top 3 schools in debate - we find it our responsibility to provide a platform 
-                    for all students to expose themselves to the unscalable realm of debate in February. 
-                    <br><br>
-                    Debate has countless benefits. Not only does it test your critical thinking and argumentation skills, it also challenges you beyond 
-                    just a mental level. Communication skills - vital in this modern world - are embedded in debaters. I've been in situations where only 
-                    my negotiation, persuasion and communication helped me, and it would be wrong for me to not present an opportunity to all debaters 
-                    to similarly develop these skills. Debate builds teamwork, leadership and confidence and I hope every debater takes something 
-                    away from the conference. Remember, awards aren't as important as your own personal growth, and our organizing team will ensure 
-                    that we can provide you with the best experience possible. 
-                    <br><br>
-                    I remember being a scared debater in national selections 3 years ago, wondering how my MUN background can help me. Yet, I soon noticed, 
-                    that I would have to relearn everything I knew about giving speeches. I remember iron-manning in international tournaments, gasping 
-                    for every breath at national camp and busting my brains every debate tournament I attend. It is difficult, but the sense of accomplishment 
-                    you feel when a round is over is impeccable. It is a rabbithole, it is my rabbithole, and I can't remember how long I've waited to present 
-                    this competition to you. I hope to see you all on February 17-18th, 2024, and don't forget to give your best and make sure to learn something, 
-                    regardless of the results. 
-                    <br><br>
-                    Signing off (for now), 
-                    <br>
-                    Yash Iyer 
-                    <br>
-                    Chief Organizer 
-                    <br>
-                    TISB DEBATE 2024
+        <div class="article" id="chief-org-letter" style="grid-row: 1;">
+            <h1 class="subsubheading">Letter from the Chief Organizer</h1>
+            <div style="grid-row: 2; display: grid;">
+                <p style="grid-column: 1; padding-right: 1vw;">
+                Dear debaters,
+                <br><br>
+                It is my absolute honor to bring to you the first edition of TISB DEBATE. TISB's previous debating endeavours have been incredible 
+                and filled with national debaters (and a WSDC Best Speaker). Having continuously contributed to the Indian debating circuit, we 
+                now look to contribute in another way. As one of India's top 3 schools in debate - we find it our responsibility to provide a platform 
+                for all students to expose themselves to the unscalable realm of debate in February. 
+                <br><br>
+                Debate has countless benefits. Not only does it test your critical thinking and argumentation skills, it also challenges you beyond 
+                just a mental level. Communication skills - vital in this modern world - are embedded in debaters. I've been in situations where only 
+                my negotiation, persuasion and communication helped me, and it would be wrong for me to not present an opportunity to all debaters 
+                to similarly develop these skills. Debate builds teamwork, leadership and confidence and I hope every debater takes something 
+                away from the conference. Remember, awards aren't as important as your own personal growth, and our organizing team will ensure 
+                that we can provide you with the best experience possible. 
+                <br><br>
+                I remember being a scared debater in national selections 3 years ago, wondering how my MUN background can help me. Yet, I soon noticed, 
+                that I would have to relearn everything I knew about giving speeches. I remember iron-manning in international tournaments, gasping 
+                for every breath at national camp and busting my brains every debate tournament I attend. It is difficult, but the sense of accomplishment 
+                you feel when a round is over is impeccable. It is a rabbithole, it is my rabbithole, and I can't remember how long I've waited to present 
+                this competition to you. I hope to see you all on February 17-18th, 2024, and don't forget to give your best and make sure to learn something, 
+                regardless of the results. 
+                <br><br>
+                Signing off (for now), 
+                <br>
+                Yash Iyer 
+                <br>
+                Chief Organizer 
+                <br>
+                TISB DEBATE 2024
                 </p>
                 <img src="assets/chief_organizer.png" alt="Chief Organizer" style="grid-column: 2; width: 15vw;">
             </div>
         </div>
-        <div id="teacher-adv-letter" style="grid-row: 2;">
-            <h1 id="teacher-adv-letter-heading">Letter from the Teacher Advisor</h1>
-            <div id="teacher-adv-letter-content" style="grid-row: 2; display: grid;">
+        <div class="article" style="grid-row: 2;">
+            <h1 class="subsubheading">Letter from the Teacher Advisor</h1>
+            <div style="grid-row: 2; display: grid;">
                 <img src="assets/teacher_advisor.jpg" alt="Teacher Advisor" style="grid-column: 1; width: 15vw;">
-                <p id="teacher-adv-letter-content" style="grid-column: 2; padding-left: 1vw;">
+                <p style="grid-column: 2; padding-left: 1vw;">
                 Hello and a warm welcome to all esteemed guests, enthusiastic participants, and teachers across the country and the globe. 
                 <br><br>
                 With great joy, I am here to address you as the faculty advisor for the annual Inter School Debate Competition of The International School 
@@ -267,11 +320,23 @@ for i, para in enumerate(words):
             </div>
         </div>
     </div>
-    <div id="motions-page">
-        <h1>Motions</h1>
-	<div id="motion-1" style="grid-column: 1;">Unreleased</div>
-	<div id="motion-2" style="grid-column: 2;">Unreleased</div>
-	<div id="motion-3" style="grid-column: 3;">Unreleased</div>
+    <div id="motions-page" class="multifile-box">
+        <h1 class="subheading">Motions</h1>
+        <div class="file-placeholder" style="grid-column: 1;"><p>Unreleased</p></div>
+        <div class="file-placeholder" style="grid-column: 2;"><p>Unreleased</p></div>
+        <div class="file-placeholder" style="grid-column: 3;"><p>Unreleased</p></div>
+    </div>
+    <div id="files-page" class="multifile-box">
+        <h1 class="subheading">Files</h1>
+        <div class="file-placeholder tooltip" style="grid-column: 1;">
+            <p>Rules (unreleased)</p>
+        </div>
+        <div class="file-placeholder tooltip" style="grid-column: 2;">
+            <p>Schedule (unreleased)</p>
+        </div>
+        <div class="file-placeholder" style="grid-column: 3;" onclick="tohref_codeofconduct()">
+            <p>Code of Conduct</p>
+        </div>
     </div>
 </body>
 </html>
