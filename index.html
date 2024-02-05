@@ -4,34 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TISB Debate</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
     <script>
         function tohref(href) { location.href = href; }
         tohref_reg = () => { tohref("https://events.tisb.org/tdrf/"); };
-        tohref_codeofconduct = () => { tohref("./assets/code_of_code.pdf"); };
+        tohref_codeofconduct = () => { tohref("/assets/TISB Debate Code of Conduct.pdf"); };
+        tohref_motions = () => { tohref("/assets/motions.pdf"); };
     </script>
-    <div id="top-nav">
+    <div id="top-nav" style="@media screen and (max-width: 25cm) { display: none; }">
         <div style="grid-column: 1; height: 17vh; overflow: hidden;">
-            <img id="top-nav-logo" src="assets/logo-removebg.png" alt="TISB Debate Logo" height="100%">
+            <img id="top-nav-logo" src="/assets/logo.jpg" alt="TISB Debate Logo" height="100%">
         </div>
-        <div style="grid-column: 2;"><a href="#top-nav" style="color:black;">Home</a></div>
-        <div style="grid-column: 3;"><a href="#about-page" style="color:black;">About</a></div>
-        <div style="grid-column: 4;"><a href="#letters-page" style="color:black;">Letters</a></div>
-        <div style="grid-column: 5;"><a href="#motions-page" style="color:black;">Motions</a></div>
-        <div style="grid-column: 6;"><a href="#files-page" style="color:black;">Files</a></div>
-        <div style="grid-column: 7;"><a href="https://events.tisb.org/tdrf/" style="color:black;">Register</a></div>
+        <div style="grid-column: 2;"><a class="subsubheading" href="#top-nav" style="text-decoration: none; color: black;">Home</a></div>
+        <div style="grid-column: 3;"><a class="subsubheading" href="#sponsors-page" style="text-decoration: none; color: black;">Sponsorship</a></div>
+        <div style="grid-column: 4;"><a class="subsubheading" href="#about-page" style="text-decoration: none; color: black;">About</a></div>
+        <div style="grid-column: 5;"><a class="subsubheading" href="#letters-page" style="text-decoration: none; color: black;">Letters</a></div>
+        <div style="grid-column: 6;"><a class="subsubheading" href="#motions-page" style="text-decoration: none; color: black;">Motions and Files</a></div>
+        <div style="grid-column: 7;"><a class="subsubheading" href="https://events.tisb.org/tdrf/" style="text-decoration: none; color: black;">Register</a></div>
     </div>
     <div id="front-page">
-        <img id="front-page-logo" src="assets/logo-removebg.png" alt="TISB Debate Logo">
-        <h1 class="heading">TISB Debate 2024</h1>
-        <h1 class="subheading">17-18 February, 2024</h1>
-        <div id="front-page-regbtn"><div class="clickable" onclick="tohref_reg()">Register</div></div>
+        <img id="front-page-logo" src="/assets/logo.jpg" alt="TISB Debate Logo" style="height: 40vh">
+        <h1 class="heading" style="height: 1.7cm; padding-top: 0.5cm">TISB Debate 2024</h1>
+        <h1 class="subheading" style="height: 1.4cm; padding-top: 0.5cm">17-18 February, 2024</h1>
+        <div id="front-page-regbtn" style="height: 2cm; padding-top: 0.5cm"><div class="clickable" onclick="tohref_reg()">Register</div></div>
     </div>
     <hr>
-    <div id="about-page">
-        <div class="article" style="grid-row: 1;">
+    <div class="articles-page" id="sponsors-page">
+        <div class="article" style="grid-row: 1; width: fit-content;">
+            <h1 class="subsubheading">Sponsored by</h1>
+            <img src="/assets/nambiar-builders.png" alt="Nambiar Builders" style="width: 33vw;">
+        </div>
+    </div>
+    <div class="articles-page" id="about-page">
+        <div class="article" style="grid-row: 1; width: 60%;">
             <h1 class="subsubheading">About TISB</h1>
             <div style="grid-row: 2; display: grid;">
                 <p style="grid-column: 1;">
@@ -43,20 +50,22 @@
                 to not only education, but life is what TISB stands for. TISB's ample facilities and teachers' persistent
                 encouragement provide endless opportunities for students to pursue all kinds of interests.
                 </p>
-                <img src="assets/tisb-campus.webp" alt="TISB Campus Photo" style="grid-column: 2; width: 20vw;">
+                <img src="/assets/tisb-campus.webp" alt="TISB Campus Photo" style="grid-column: 2; height: 30vh;">
             </div>
         </div>
-        <div class="article" style="grid-row: 2;">
+        <div class="article" style="grid-row: 2; width: 60%;">
             <h1 class="subsubheading">About TISB Debate 2024</h1>
             <div style="grid-row: 2; display: grid;">
-                <img src="assets/logo-removebg.png" alt="TISB Debate Logo" style="grid-column: 1; width: 20vw;">
-                <p style="grid-column: 2;">
-                The first edition of the TISB Debate is finally here, from 17th to 18th February online, taking the school by
-                storm. The TISB DEBATE Organising Committee is ecstatic to announce the first iteration of presumably many, TISB
-                debates.<br><br>An event established to challenge young minds in the field of debate, TISB Debate is a much-awaited
-                and grand conference that can be your stepping stone into the world of debate! This online conference welcomes
-                teams of grades 6-12 and aims to include and imbibe everybody into the world of debate, either help spark an
-                interest or hone previously built skills in students.
+                <img src="/assets/logo.jpg" alt="TISB Debate Logo" style="grid-column: 1; height: 30vh;">
+                <p style="grid-column: 2; padding-left: 1vw;">
+                    TISB is proud to announce the first edition of TISB Debate on 17th and 18th February, 2024. it aims to be
+                    India's largest student-led debate competition. Students from around asia will compete to win exciting
+                    prizes in thought-provoking debate about crucial world issues and current affairs.<br><br>This event will
+                    challenge young minds to confront the status quo while allowing for them to hone skills such as public
+                    speaking, quick, analytical problem solving and astute articulation. This online conference welcomes
+                    student teams of grades 6-12, aiming to enkindle a voracious curiosity for knowledge beyond classroom
+                    material. This will cultivate and advance the holistic nature of education that contemporary schools aspire
+                    to inculcate. 
                 </p>
             </div>
         </div>
@@ -78,14 +87,14 @@ for i, para in enumerate(words):
     sum_ = 0
     print("\n" + indent*" " + "<br><br>\n" + indent*" ", end="")
     -->
-    <div id="letters-page">
-        <div class="article" id="chief-org-letter" style="grid-row: 1;">
+    <div class="articles-page" id="letters-page">
+        <div class="article" id="chief-org-letter" style="grid-row: 1; width: 50%;">
             <h1 class="subsubheading">Letter from the Chief Organizer</h1>
             <div style="grid-row: 2; display: grid;">
                 <p style="grid-column: 1; padding-right: 1vw;">
                 Dear debaters,
                 <br><br>
-                It is my absolute honor to bring to you the first edition of TISB DEBATE. TISB's previous debating endeavours have been incredible 
+                It is my absolute honor to bring to you the first edition of TISB Debate. TISB's previous debating endeavours have been incredible 
                 and filled with national debaters (and a WSDC Best Speaker). Having continuously contributed to the Indian debating circuit, we 
                 now look to contribute in another way. As one of India's top 3 schools in debate - we find it our responsibility to provide a platform 
                 for all students to expose themselves to the unscalable realm of debate in February. 
@@ -112,42 +121,48 @@ for i, para in enumerate(words):
                 <br>
                 TISB DEBATE 2024
                 </p>
-                <img src="assets/chief_organizer.png" alt="Chief Organizer" style="grid-column: 2; width: 15vw;">
+                <img src="/assets/chief_organizer.png" alt="Chief Organizer" style="grid-column: 2; height: 30vh;">
             </div>
         </div>
-        <div class="article" style="grid-row: 2;">
+        <div class="article" style="grid-row: 2; width: 50%;">
             <h1 class="subsubheading">Letter from the Teacher Advisor</h1>
             <div style="grid-row: 2; display: grid;">
-                <img src="assets/teacher_advisor.jpg" alt="Teacher Advisor" style="grid-column: 1; width: 15vw;">
+                <img src="/assets/teacher_advisor.jpg" alt="Teacher Advisor" style="grid-column: 1; height: 30vh;">
                 <p style="grid-column: 2; padding-left: 1vw;">
-                Hello and a warm welcome to all esteemed guests, enthusiastic participants, and teachers across the country and the globe. 
+                Hello and a warm welcome to all esteemed guests, enthusiastic participants, and teachers across the country and
+                the globe.
                 <br><br>
-                With great joy, I am here to address you as the faculty advisor for the annual Inter School Debate Competition of The International School 
-                Bangalore. I am privileged and humbled to assist you and the organising committee of the event in all capacities. I am eagerly looking 
-                forward to witness this rewarding and transformative journey that you are going to experience. 
+                With great joy, I am here to address you as the faculty advisor for the annual Inter School Debate Competition
+                of The International School Bangalore. I am privileged and humbled to assist you and the organising committee
+                of the event in all capacities. I am eagerly looking forward to witness this rewarding and transformative
+                journey that you are going to experience.
                 <br><br>
-                Building on the grand success of various events that TISB holds over the past decade, such as Xavage and TISBMUN, which provide students 
-                from across the country an opportunity to showcase their skills related to debating, problem-solving and critical thinking, we aim 
-                to introduce TISB Annual Inter School Debate Competition for the first time in the history of the school. The competition will be held 
-                online and is open for teams consisting of both middle and senior school students. The event is first of its kind and we are optimistic that 
-                we will be able to continue with the legacy of successful student-driven events held at TISB. 
+                Building on the grand success of various events that TISB holds over the past decade, such as Xavage and
+                TISBMUN, which provide students from across the country an opportunity to showcase their skills related to
+                debating, problem-solving and critical thinking, we aim to introduce TISB Annual Inter School Debate
+                Competition for the first time in the history of the school. The competition will be held online and is open
+                for teams consisting of both middle and senior school students. The event is first of its kind and we are
+                optimistic that we will be able to continue with the legacy of successful student-driven events held at TISB.
                 <br><br>
-                Scheduled on the 17th and 18th of February 2024, TISB Annual Inter School Debate will provide you a platform to come together to learn collaboratively 
-                and express your views on various issues that the world is being challenged with. Through thoughtful discussions, arguments, counterarguments, 
-                and an open mind to appreciate diverse perspectives, we would surely be preparing ourselves to regard global problems with a positive 
-                approach and come up with feasible solutions to the same. 
+                Scheduled on the 17th and 18th of February 2024, TISB Annual Inter School Debate will provide you a platform to
+                come together to learn collaboratively and express your views on various issues that the world is being
+                challenged with. Through thoughtful discussions, arguments, counterarguments, and an open mind to appreciate
+                diverse perspectives, we would surely be preparing ourselves to regard global problems with a positive approach
+                and come up with feasible solutions to the same.
                 <br><br>
-                As global citizens, we cannot ignore the challenges faced by any country. It is thus becoming crucial day-by-day for young minds to broaden 
-                their outlook, sharpen their thoughts and attempt to bring in massive changes in the society. I strongly feel that debating is the first 
-                step to open one's eyes into the reality to identify these challenges. Moreover, debating is an excellent way to practise quick thinking, 
-                be a good listener and hone your communication skills. I, thus, insist all participants to embrace this opportunity to learn, grow, and 
-                let your voices be heard. 
+                As global citizens, we cannot ignore the challenges faced by any country. It is thus becoming crucial
+                day-by-day for young minds to broaden their outlook, sharpen their thoughts and attempt to bring in massive
+                changes in the society. I strongly feel that debating is the first step to open one's eyes into the reality to
+                identify these challenges. Moreover, debating is an excellent way to practise quick thinking, be a good
+                listener and hone your communication skills. I, thus, insist all participants to embrace this opportunity to
+                learn, grow, and let your voices be heard. 
                 <br><br>
-                Thank you, teachers across the globe, for incessantly encouraging your students to take up challenges, and guiding them towards their 
-                holistic development. 
+                Thank you, teachers across the globe, for incessantly encouraging your students to take up challenges, and
+                guiding them towards their holistic development. 
                 <br><br>
-                I assure you that the organising committee for the TISB Annual Inter School Debate competition is diligently working to provide the best 
-                experience, under the supervision of TISB staff. We eagerly anticipate hosting you and offering a debating experience that stands out! 
+                I assure you that the organising committee for the TISB Annual Inter School Debate competition is diligently
+                working to provide the best experience, under the supervision of TISB staff. We eagerly anticipate hosting you
+                and offering a debating experience that stands out!
                 <br><br>
                 Best regards, 
                 <br>
@@ -160,23 +175,37 @@ for i, para in enumerate(words):
             </div>
         </div>
     </div>
-    <div id="motions-page" class="multifile-box">
-        <h1 class="subheading">Motions</h1>
-        <div class="file-placeholder" style="grid-column: 1;"><p>Unreleased</p></div>
-        <div class="file-placeholder" style="grid-column: 2;"><p>Unreleased</p></div>
-        <div class="file-placeholder" style="grid-column: 3;"><p>Unreleased</p></div>
+    <div style="
+        display: grid;
+        grid-template-columns: 30vw 60vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        @media screen and (max-width: 25cm) {
+            grid-template-columns: 100vw !important;
+        }
+        ">
+        <div id="motions-page" class="multifile-box">
+            <h1 class="subheading" style="grid-column: 1;">Motions</h1>
+            <div class="clickable file-placeholder" style="align-self: center; grid-column: 1;" onclick="tohref_motions()">
+                <p>Prepared Motions</p>
+            </div>
+        </div>
+        <div id="files-page" class="multifile-box">
+            <h1 class="subheading">Files</h1>
+            <div class="file-placeholder" style="grid-column: 1;">
+                <p>Rules (unreleased)</p>
+            </div>
+            <div class="file-placeholder" style="grid-column: 2;">
+                <p>Schedule (unreleased)</p>
+            </div>
+            <div class="clickable file-placeholder" style="grid-column: 3;" onclick="tohref_codeofconduct()">
+                <p>Code of Conduct</p>
+            </div>
+        </div>
     </div>
-    <div id="files-page" class="multifile-box">
-        <h1 class="subheading">Files</h1>
-        <div class="file-placeholder" style="grid-column: 1;">
-            <p>Rules (unreleased)</p>
-        </div>
-        <div class="file-placeholder" style="grid-column: 2;">
-            <p>Schedule (unreleased)</p>
-        </div>
-        <div class="clickable file-placeholder" style="grid-column: 3;" onclick="tohref_codeofconduct()">
-            <p>Code of Conduct</p>
-        </div>
-    </div>
+    <footer style="text-align: center; padding-botton: 10vh">
+        Contact us at <a href="mailto:debate@tisb.ac.in" style="text-decoration: none;">debate@tisb.ac.in</a><br>
+        <strong>TISB DEBATE &#169 ALL RIGHTS RESERVED</strong>
+    </footer>
 </body>
 </html>
