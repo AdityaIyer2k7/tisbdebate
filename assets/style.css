@@ -7,23 +7,31 @@
     border-width: 0;
     margin: 0;
     font-size: large;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: sans-serif;
     overflow-x: hidden;
     color: white;
     user-select: none;
     -webkit-user-select: none;
 }
+h1 {
+    text-shadow: 0px 0px 0.25vmin black;
+}
+a {
+    text-decoration: none;
+}
 html { height:100%; }
 body { height: 100%; background-color: var(--tisb-bg-col1); }
 #top-nav {
     display: grid;
-    height: 20vh;
-    padding: 0% 20vw 0% 5vw;
+    height: 15vh;
+    padding: 0% 20vw 0% 10vw;
+    grid-template-rows: 15vh;
     grid-template-columns: auto;
     background-color: var(--tisb-panels-col);
     overflow: hidden;
 }
 #top-nav>* {
+    grid-row: 1;
     justify-self: center;
     align-self: center;
 }
@@ -35,12 +43,12 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     background-image: linear-gradient(rgba(0,0,0,0) 45%, var(--tisb-bg-col1) 80%), url("/assets/courtroom-bg-cropped.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    padding-top: 10vh;
     padding-bottom: 15vh;
 }
 #front-page-logo {
     grid-row: 1;
     height: 40vh;
-    padding-top: 0.5cm;
     justify-self: center;
     align-self: end;
 }
@@ -82,14 +90,13 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     align-self: flex-start;
     justify-self: center;
     font-size: 175%;
-    font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
     padding: 1vh 5vw 1vh 5vw;
 }
 .articles-page {
     display: grid;
     width: 100vw;
-    padding-top: 10vh;
+    padding: 1vmin;
 }
 .articles-page>div>h1 {
     grid-row: 1;
@@ -99,6 +106,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     width: 100%;
 }
 .article {
+    box-shadow: 0px 0px 1vmin white;
     border-radius: 5px;
     background-color: var(--tisb-bg-col2);
     display: grid;
@@ -107,28 +115,21 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     padding: 2%;
 }
 .multifile-box {
-    display: grid;
-    padding: 10vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0vh 0vw 10vh 0vw;
 }
 .multifile-box>h1 {
     grid-column: span 1/3;
 }
 .file-placeholder {
-    display: flex;
+    overflow: hidden;
     align-self: center;
     justify-self: center;
-    width: 10vw;
+    padding: 0.5cm 0.5cm;
+    min-width: 3cm;
+    max-width: 6cm;
     aspect-ratio: 1/1.414;
-    background-color: grey;
-}
-.file-placeholder>p {
-    align-self: center;
-    justify-self: center;
-    text-align: center;
-    width: 100%;
-    font-size: large;
-    font-family: 'Courier New', Courier, monospace;
-    text-wrap: wrap;
 }
 .clickable {
     background-color: var(--tisb-bg-col2);
@@ -142,7 +143,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     animation-duration: 350ms;
     background-color: rgba(0,0,0,0);
 }
-@media screen and (max-width: 25cm) {
+@media (max-width: 25cm) {
     #top-nav { display: none !important; }
     #front-page { padding-top: 20vh; }
     .article[class~="w-50"] {

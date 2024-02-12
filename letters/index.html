@@ -3,73 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TISB Debate</title>
+    <title>TISB Debate | Letters</title>
     <link rel="shortcut icon" href="/assets/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-    <script>
-        function tohref(href) { location.href = href; }
-        tohref_reg = () => { tohref("https://events.tisb.org/tdrf/"); };
-        tohref_codeofconduct = () => { tohref("/assets/TISB Debate Code of Conduct.pdf"); };
-        tohref_motions = () => { tohref("/assets/motions.pdf"); };
-    </script>
     <div id="top-nav" style="@media (max-width: 25cm) { display: none; }">
-        <div><a class="subsubheading" href="/" style="color: black;">Home</a></div>
+        <div style="grid-column: 1;"><a class="subsubheading" href="/" style="color: black;">Home</a></div>
         <!-- <div style="grid-column: 2;"><a class="subsubheading" href="/sponsors" style="color: black;">Sponsors</a></div> -->
-        <div><a class="subsubheading" href="/about" style="color: black;">About</a></div>
-        <div><a class="subsubheading" href="/letters" style="color: black;">Letters</a></div>
-        <div><a class="subsubheading" href="/files" style="color: black;">Motions and Files</a></div>
+        <div style="grid-column: 2;"><a class="subsubheading" href="/about" style="color: black;">About</a></div>
+        <div style="grid-column: 3;"><a class="subsubheading" href="/letters" style="color: black;">Letters</a></div>
+        <div style="grid-column: 4;"><a class="subsubheading" href="/files" style="color: black;">Motions and Files</a></div>
     </div>
-    <div id="front-page">
-        <img id="front-page-logo" src="/assets/logo.jpg" alt="TISB Debate Logo" style="height: 40vh">
-        <h1 class="heading" style="height: 10vh; padding-top: 2vh;">TISB Debate 2024</h1>
-        <h1 class="subheading" style="height: 7vh; padding-top: 2vh;">17-18 February, 2024</h1>
-        <div id="front-page-regbtn" style="height: 10vh; padding-top: 2vh;">
-            <a href="https://events.tisb.org/tdrf/" style="height: 10vh; width: fit-content; justify-self: center;">
-                <div class="clickable" style="height: fit-content; width: 10vw; font-size: 4vh; text-align: center; padding: 1vmin;">Register</div>
-            </a>
-        </div>
-    </div>
-    <div class="articles-page" id="about-page">
-        <div class="article w-60" style="grid-row: 1; width: 60%;">
-            <a href="/about"><h1 class="subsubheading">About TISB Debate 2024</h1></a>
-            <div style="grid-row: 2; display: grid;">
-                <img src="/assets/logo.jpg" alt="TISB Debate Logo" style="grid-column: 1; height: 30vh;">
-                <p style="grid-column: 2; padding-left: 1vw;">
-                    TISB is proud to announce the first edition of TISB Debate on 17th and 18th February, 2024. With a prize
-                    pool of over &#36 1200 and no registration fees, it aims to be India's largest student-led debate competition. Students from around
-                    Asia will compete to win exciting prizes in thought-provoking debate about crucial world issues and current
-                    affairs.<br><br>This event will
-                    challenge young minds to confront the status quo while allowing for them to hone skills such as public
-                    speaking, quick, analytical problem solving and astute articulation. This online conference welcomes
-                    student teams of grades 6-12, aiming to enkindle a voracious curiosity for knowledge beyond classroom
-                    material. This will cultivate and advance the holistic nature of education that contemporary schools aspire
-                    to inculcate.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!--
-text = '''INPUT TEXT'''
-paras = text.split("\n\n")
-words = [para.split(' ') for para in paras]
-wlens = [[len(word) for word in para] for para in words]
-indent = 16
-sum_ = 0
-for i, para in enumerate(words):
-    for j, word in enumerate(para):
-        if sum_ >= 128-indent:
-            print("\n" + indent*" ", end="")
-            sum_ = 0
-        sum_ += wlens[i][j]
-        print(word, end=" ")
-    sum_ = 0
-    print("\n" + indent*" " + "<br><br>\n" + indent*" ", end="")
-    -->
-    <div class="articles-page" id="letters-page">
-        <div class="article w-50" id="chief-org-letter" style="grid-row: 1; width: 50%;">
-            <a href="/letters"><h1 class="subsubheading">Letter from the Chief Organizer</h1></a>
+    <div class="articles-page">
+        <a href="/" style="padding-bottom: 10vh; justify-self: center; display: flex;">
+            <img src="/assets/logo.jpg" alt="TISB Debate logo" style="grid-row: 1; height: 50vh; justify-self: center;">
+        </a>
+        <div class="article w-50" style="grid-row: 2; width: 50%;">
+            <h1 class="subsubheading">Letter from the Chief Organizer</h1>
             <div style="grid-row: 2; display: grid;">
                 <p style="grid-column: 1; padding-right: 1vw;">
                 Dear debaters,
@@ -104,8 +55,8 @@ for i, para in enumerate(words):
                 <img src="/assets/chief_organizer.png" alt="Chief Organizer" style="grid-column: 2; height: 30vh;">
             </div>
         </div>
-        <div class="article w-50" style="grid-row: 2; width: 50%;">
-            <a href="/letters"><h1 class="subsubheading">Letter from the Teacher Advisor</h1></a>
+        <div class="article w-50" style="grid-row: 3; width: 50%;">
+            <h1 class="subsubheading">Letter from the Teacher Advisor</h1>
             <div style="grid-row: 2; display: grid;">
                 <img src="/assets/teacher_advisor.jpg" alt="Teacher Advisor" style="grid-column: 1; height: 30vh;">
                 <p style="grid-column: 2; padding-left: 1vw;">
@@ -152,29 +103,6 @@ for i, para in enumerate(words):
                 <br>
                 Faculty of Economics
                 </p>
-            </div>
-        </div>
-    </div>
-    <div class="articles-page">
-        <div class="article w-60" style="max-width: 60vw;">
-            <a href="/files"><h1 class="subsubheading">Files</h1></a>
-            <div class="multifile-box" style="grid-row: 2;">
-                <div class="file-placeholder">
-                    <h1 class="subsubheading"><a href="/assets/uploads/TISB Debate Brochure.pdf">Brochure</a></h1>
-                    <embed src="/assets/uploads/TISB Debate Brochure.pdf#view=FitH" style="width: 100%; height: 100%;">
-                </div>
-                <div class="file-placeholder">
-                    <h1 class="subsubheading"><a href="/assets/uploads/TISB Debate Schedule.pdf">Schedule</a></h1>
-                    <embed src="/assets/uploads/TISB Debate Schedule.pdf#view=FitH" style="width: 100%; height: 100%;">
-                </div>
-                <div class="file-placeholder">
-                    <h1 class="subsubheading"><a href="/assets/uploads/TISB Debate Motions.pdf">Motions</a></h1>
-                    <embed src="/assets/uploads/TISB Debate Motions.pdf#view=FitH" style="width: 100%; height: 100%;">
-                </div>
-                <div class="file-placeholder">
-                    <h1 class="subsubheading"><a href="/assets/uploads/TISB Debate Code of Conduct.pdf">Code of Conduct</a></h1>
-                    <embed src="/assets/uploads/TISB Debate Code of Conduct.pdf#view=FitH" style="width: 100%; height: 100%;">
-                </div>
             </div>
         </div>
     </div>
