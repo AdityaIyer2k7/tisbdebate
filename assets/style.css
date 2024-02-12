@@ -17,14 +17,14 @@ h1 {
     text-shadow: 0px 0px 0.25vmin black;
 }
 a {
-    text-decoration: none;
+    text-decoration: underline;
 }
 html { height:100%; }
 body { height: 100%; background-color: var(--tisb-bg-col1); }
 #top-nav {
     display: grid;
     height: 15vh;
-    padding: 0% 20vw 0% 10vw;
+    padding: 0% 30vw 0% 10vw;
     grid-template-rows: 15vh;
     grid-template-columns: auto;
     background-color: var(--tisb-panels-col);
@@ -34,6 +34,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     grid-row: 1;
     justify-self: center;
     align-self: center;
+    overflow: hidden;
 }
 #front-page {
     display: grid;
@@ -53,21 +54,21 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     align-self: end;
 }
 .heading {
-    font-size: 300%;
+    font-size: 3em;
     align-self: flex-start;
     justify-self: center;
     text-align: center;
     color: white;
 }
 .subheading {
-    font-size: 200%;
+    font-size: 2em;
     align-self: flex-start;
     justify-self: center;
     text-align: center;
     color: white;
 }
 .subsubheading {
-    font-size: 150%;
+    font-size: 1em;
     align-self: flex-start;
     justify-self: center;
     text-align: center;
@@ -120,7 +121,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     padding: 0vh 0vw 10vh 0vw;
 }
 .multifile-box>h1 {
-    grid-column: span 1/3;
+    flex-grow: 3;
 }
 .file-placeholder {
     overflow: hidden;
@@ -128,7 +129,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     justify-self: center;
     padding: 0.5cm 0.5cm;
     min-width: 3cm;
-    max-width: 6cm;
+    max-width: 7cm;
     aspect-ratio: 1/1.414;
 }
 .clickable {
