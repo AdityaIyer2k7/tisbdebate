@@ -24,7 +24,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
 #top-nav {
     display: grid;
     height: 15vh;
-    padding: 0% 30vw 0% 10vw;
+    padding: 0% 20vw 0% 10vw;
     grid-template-rows: 15vh;
     grid-template-columns: auto;
     background-color: var(--tisb-panels-col);
@@ -45,7 +45,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-top: 10vh;
-    padding-bottom: 15vh;
+    /* padding-bottom: 15vh; */
 }
 #front-page-logo {
     grid-row: 1;
@@ -115,6 +115,10 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     margin-bottom: 10vh;
     padding: 2%;
 }
+.nobg {
+    box-shadow: none !important;
+    background-color: var(--tisb-bg-col1) !important;
+}
 .multifile-box {
     display: flex;
     flex-wrap: wrap;
@@ -128,8 +132,9 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     align-self: center;
     justify-self: center;
     padding: 0.5cm 0.5cm;
+    flex-grow: 2;
     min-width: 3cm;
-    max-width: 7cm;
+    max-width: 12cm;
     aspect-ratio: 1/1.414;
 }
 .clickable {
@@ -145,7 +150,7 @@ body { height: 100%; background-color: var(--tisb-bg-col1); }
     background-color: rgba(0,0,0,0);
 }
 @media (max-width: 25cm) {
-    #top-nav { display: none !important; }
+    #top-nav { padding: 0%; }
     #front-page { padding-top: 20vh; }
     .article[class~="w-50"] {
         width: min(80vw, 12.5cm) !important;
